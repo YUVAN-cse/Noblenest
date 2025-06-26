@@ -1,0 +1,27 @@
+.nav-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-hover div {
+    border: none;
+    border-radius: 1rem;
+    color: black !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.1rem;
+    padding: 18px  15px ;
+    width: 10rem;
+}
+
+.nav-hover div:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

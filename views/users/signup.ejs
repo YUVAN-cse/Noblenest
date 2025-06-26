@@ -1,0 +1,48 @@
+<% layout('/layouts/boilerplate') %>
+
+    <body>
+        <div class="row mt-4">
+            <div class="col-6 offset-2">
+                <h1>Sign Up</h1>
+                <form method="POST" action="/signup" novalidate class="needs-validation">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">username</label>
+                        <input type="text" id="username" class="form-control" name="username"
+                            placeholder="Enter the username" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please choose a title.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">email</label>
+                        <input type="text" id="email" class="form-control" name="email" placeholder="Enter the email"
+                            required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please choose a email.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label">password</label>
+                        <input type="password" id="password" class="form-control" name="password"
+                            placeholder="Enter the password" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please choose a password.
+                        </div>
+                    </div>
+
+                    <button class="btn btn-success">Sign Up</button>
+            </div>
+        </div>
+
+    </body>
