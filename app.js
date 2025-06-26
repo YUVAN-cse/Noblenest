@@ -79,15 +79,6 @@ app.use((req,res,next)=>{
   next()
 })
 
-app.get("/demoUser" , async(req,res)=>{
-  let fakeUser = new User({
-    email: "Yuvan@gmail.com",
-    username: "YUVAN-great",
-  })
-  let fakeuser = await User.register(fakeUser,"helloworld")
-  res.send(fakeuser)
-
-})
 
 app.get("/" , (req,res)=>{
   res.redirect("/listings")
@@ -98,7 +89,7 @@ app.use("/" , userRouter)
 app.use("/listings/:id/reviews" , reviews)
 
 
-app.all("*", (req, res, next) => {
+app.use((req, res, next) => {
   next(new ExpressError(404, "Page Not Found"));
 });
 
