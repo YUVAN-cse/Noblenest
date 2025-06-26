@@ -90,12 +90,6 @@ app.get("/demoUser" , async(req,res)=>{
 })
 
 
-app.get("/", (req, res) => {
-  res.send("working")
-  console.log(req.session)
-})
-
-
 
 app.use("/listings" , listings)
 app.use("/" , userRouter)
