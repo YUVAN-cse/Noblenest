@@ -89,16 +89,18 @@ app.get("/demoUser" , async(req,res)=>{
 
 })
 
-
+app.get("/" , (req,res)=>{
+  res.redirect("/listings")
+})
 
 app.use("/listings" , listings)
 app.use("/" , userRouter)
 app.use("/listings/:id/reviews" , reviews)
 
 
-app.use((req, res, next) => {
+app.all("*", (req, res, next) => {
   next(new ExpressError(404, "Page Not Found"));
-})
+});
 
 app.use((err, req, res, next) => {
   // res.send("something went wrong")
@@ -107,6 +109,8 @@ app.use((err, req, res, next) => {
   res.render("error.ejs",{message})
 })
 
-app.listen(8080, () => {
-  console.log("listening")
-})
+
+const port = process.env.PORT || 8080;
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
+});
